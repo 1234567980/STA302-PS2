@@ -28,15 +28,14 @@ COVID-19 pandemic has impacted Ontario in various aspects other than just the nu
 Upon deciding our survey methodology, we have taken cost, efficiency, responses, and bias into consideration. More of our methodology will be discussed below. Consequently, the survey consists of socio-demographic, COVID impacts, political stance, and voting intentions, in which we then distributed through phone calls by simple random sampling without replacement (details of the survey attached to appendix). Such probability sampling technique provides a projectable result, and it allows us to apply statistical procedures to analyze data and calculate errors. 
 Our findings have revealed that only 53% of respondents consider the public health response “appropriate”, whereas 29% think it is insufficient. We have also discovered COVID pandemic’s impact on different aspects of Ontario residents. In general, the majority of the population is not heavily impacted. However, a significant proportion are undergoing negative impacts from the pandemic in certain aspects such as mental health and financial situation. Despite that 77% of the population are satisfied with the Ontario government’s response, there is still a lot to be done in order to meet the residents’ needs. It is important to take action on such issues as we have discovered 21% of decided voter’s voting intention is influenced by COVID pandemic. Thus the electoral fortune of the Progressive Conservative Party in 2022 is broadly influenced by people’s satisfaction of their response. Our findings have some potential weaknesses and limitations that will later be discussed in detail, as well as some achievable future studies. 
 
-Link to code: 
-
-
+Link to code: https://github.com/1234567980/STA302-PS2
 
 
 # Methodology/Sampling method
 The population being considered consists of all Ontarians aged 18 (years) and above who are legally able to vote. As a result, the Permanent Register of Electors for Ontario (Ontario Voters list) was used as our sampling frame. We then proceeded to sample 3850 Ontarians from the frame, using the SRSWOR method. Although the SRSWOR technique is meant to be used on a sampling frame containing all population units, the Permanent Register of Electors for Ontario contains 94% coverage of our target population. While this does create an opportunity for coverage error to arise, the significance is outweighed by the convenience of using the Ontario Voters list. By randomly selecting members of the Ontario Voters list one at a time (without replacement) to be surveyed over the phone, each Ontarian on the list has an equal probability of being selected. With this survey sampling design, it is unlikely that we would not be able to reach our desired respondents. Since conducting a single survey takes about 3 minutes, and we wish to survey 3850 people, roughly 11,550 minutes, or 192.5 hours, will be required to complete our survey sampling design. Thus, hiring a few employees to direct the surveys at a pay rate of $20 an hour would cost approximately $3850. Assuming that $3850 is the monthly cost of providing polling updates to the Progressive Conservative Party of Ontario, the year would cost $46,200. To deal with non-response, a voicemail will be left to any Ontarian who does not answer the phone the first time they are called.
 
 
+Below is a preview of our simulated data: 
 
 
 ```{r, echo=FALSE, include=FALSE}
@@ -86,15 +85,6 @@ who2018_percentage <- c(0.4063, 0.3369, 0.193, 0.0462, 0.0176)
 #TODO: Discuss later? Not sure how to find the appropriate amount of survey takers
 survey_size <- 3850
 
-```
-
-
-
-Below is a preview of our simulated data: 
-
-
-
-```{r, echo=FALSE}
 set.seed(123)
 
 # Simulate random sampling from population with our survey (WITHOUT replacement)
