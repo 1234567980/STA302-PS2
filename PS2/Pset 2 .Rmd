@@ -186,7 +186,7 @@ comparisons_PC <- data.frame("Labels" = c("Voted for PC (2018)", "Will vote for 
 
 # Discussion and Results
 
-With the social distancing regulations and mask requirements that were put into place, there has been much debate online about whether these measures were going too far or not enough. From Figure (1), we've noticed most Ontarians think that the Public Health's approach to Corona was appropriate. However, it is interesting to note that 29% of people think that the government's response to the current pandemic was not sufficient in comparison to 18% of people who think that regulations have gone too far. In addition to the results found in this survey, a nation-wide survey confirmed that the government satisfaction rate in April in Ontario was 78%. However, it is important to note that this number has significantly dropped since then. The same survey(bib2) was conducted in September and the satisfaction rate in Ontario sank to 63%. The decrease in satisfaction rate in September could probably be attributed to the rise of Covid19 cases that we are currently seeing.
+With the social distancing regulations and mask requirements that were put into place, there has been much debate online about whether these measures were going too far or not enough. From graph (1), we've noticed most Ontarians think that the Public Health's approach to Corona was appropriate. However, it is interesting to note that 29% of people think that the government's response to the current pandemic was not sufficient in comparison to 18% of people who think that regulations have gone too far. In addition to the results found in this survey, a nation-wide survey confirmed that the government satisfaction rate in April in Ontario was 78%. However, it is important to note that this number has significantly dropped since then. The same survey(bib2) was conducted in September and the satisfaction rate in Ontario sank to 63%. The decrease in satisfaction rate in September could probably be attributed to the rise of Covid19 cases that we are currently seeing.
 
 
 
@@ -212,6 +212,10 @@ ggplot(my_data,aes(x = factor(q6, level = c("Not far enough", "Just right", "Too
         axis.ticks.y =element_blank())+
   theme(axis.text.x= element_text(colour = "black", size = 12))
 ```
+
+
+Graph 1: Public opinion on health response to the current corona virus pandemic in Ontario
+
 
 
 From small business owners to those working in the gig economy and artists, the government response has been lackluster as a CBC article states that business support from the government “is not even close to being enough” (bib1). 
@@ -240,6 +244,8 @@ ggplot(my_data,aes(x = factor(q7, level = c("Awful", "Okay", "Great")), fill=q7,
   theme(axis.text.x= element_text(colour = "black", size = 12))
 ```
 
+
+Graph 2: Covid impact on work
 
 
 Moreover, since many people have been forced to work from home, many complaints have emerged about the difficulty of working in a home environment. However, it is possible that unhappy workers were more vocal about such issues, as 64% of the respondents indicate that they have not been heavily impacted by COVID-19 in graph (2). And 24% have even seen positive effects from the pandemic.
@@ -271,6 +277,9 @@ ggplot(my_data,aes(x = factor(q8, level = c("Bad", "Good", "Great")), fill=q8, l
 ```
 
 
+
+Graph 3: Covid19 impact on household financial needs
+
 From graph (3), it seems that for a majority of people, the coronavirus pandemic has not had a major impact on their finances with even a small amount of people reporting that their finances have benefited from the pandemic. Suggesting that the emergency assistance provided by the government has been successful to some degree. However, it is still concerning to notice that a sizable portion of the population, 22.4%, has reported that their financial situations have become more difficult since the start of the pandemic. 
 
 
@@ -279,7 +288,7 @@ From graph (3), it seems that for a majority of people, the coronavirus pandemic
 Additionally, a study by iPolitics found that financial difficulties played a role in the increase of mental health struggles as distress calls went up in August due to anxieties of the termination of CERB (bib3). This finding complements our survey’s results as 35% of people reported feeling that their mental health has gotten worse from before the pandemic. This result is confirmed by an additional survey conducted by CTV measuring the rates of anxiety/depression diagnoses during the pandemic. “Nearly 50 percent were considered probable candidates for anxiety disorders and more than 40 percent were likely to be clinically depressed. Almost 85 percent of respondents reported moderate to high stress(bib4).” In summary, “there has been a lot of pressure on people’s relationships, a lot of pressure on people’s living arrangements, and of course - the financial pressures (bib5).”
 
 
-```{r, echo=FALSE,  include=FALSE}
+```{r, echo=FALSE, tidy=FALSE, message=FALSE }
 # Bar plot of the answer distribution of q9
 ggplot(my_data,aes(x = factor(q9, level = c("Bad", "Good", "Great")), fill=q9, label = scales::percent(prop.table(stat(count))))) +
     geom_bar()+
@@ -302,6 +311,9 @@ ggplot(my_data,aes(x = factor(q9, level = c("Bad", "Good", "Great")), fill=q9, l
   theme(axis.text.x= element_text(colour = "black", size = 12))
 ```
 
+
+
+Graph 4: Covid19 impact on mental health
 
 
 So far it seems that for a majority of people, the coronavirus pandemic has not impacted them heavily in a detrimental way. This is reflected by 77% of our respondents responding that they were satisfied with how the provincial government has handled the pandemic, shown in graph (5). It demonstrates that although the provincial government has been successful at preventing many people from being negatively influenced by COVID-19, there is still much room for improvement with 23% of the population unsatisfied. 
@@ -331,8 +343,7 @@ ggplot(my_data,aes(x = factor(q10, level = c("Bad", "Good")), fill=q10, label = 
 
 
 
-Graph (6) depicts the percentage of the population that would vote for a particular party if a sudden election were to be held right now. The graph above demonstrates that the largest portion of the population that would vote for the Progressive Conservitive Party corresponding to 79% of the population is satisfied with the provincial government’s response(figure (5)). Figures 7 further enforces that the Ontario government has responded in the right direction by showing that the percentage of people who would vote for Conservatives has increased by 5.5% from 2018. 
-
+Graph 5: Public satisfaction with Ontarian government's response to Covid19
 
 ```{r, echo=FALSE}
 # Bar plot of the answer distribution of q11
@@ -357,6 +368,12 @@ ggplot(my_data,aes(x = factor(q11, level = c("PC", "NDP", "LIB", "GRN", "Other")
 
 
 
+Graph 6: Vote intention in Ontario if a sudden election were to occur right now
+
+
+Graph (6) depicts the percentage of the population that would vote for a particular party if a sudden election were to be held right now. The graph above demonstrates that the largest portion of the population that would vote for the Progressive Conservitive Party corresponding to 79% of the population is satisfied with the provincial government’s response (Graph 5). 
+
+
 ```{r, echo=FALSE}
 # Bar plot of a comparison between the people who voted PC in 2018 and the people who would vote for PC now
 ggplot(comparisons_PC, aes(x = Labels, y = Percentage, fill = Labels  , label = paste(round(Percentage*100, 1),"%",sep=""))) + 
@@ -377,9 +394,13 @@ ggplot(comparisons_PC, aes(x = Labels, y = Percentage, fill = Labels  , label = 
 ```
 
 
+Graph 7: Percent of people who voted for PC party vs Percent of people who would vote for PC today
 
 
-```{r, echo=FALSE, include=FALSE}
+Graph (7) further enforces that the Ontario government has responded in the right direction by showing that the percentage of people who would vote for Conservatives has increased by 5.5% from 2018. 
+
+
+```{r, echo=FALSE}
 # Bar plot of the answer distribution of q12
 ggplot(my_data,aes(x = factor(q12, level = c('Yes', 'No')), fill=q12, label = scales::percent(prop.table(stat(count))))) +
     geom_bar(width = 0.6)+
@@ -401,8 +422,10 @@ ggplot(my_data,aes(x = factor(q12, level = c('Yes', 'No')), fill=q12, label = sc
 ```
 
 
+Graph 8: Whether people have changed political stances from the government's response
 
-As shown from the graph above (Figure(8)), it seems that for most people, their political stance has not been severely influenced by the Ontario government’s response. Meaning that only approximately 21% of people changed their stances from supporting or not supporting the PC party due to being negatively or positively affected by the Covid19 pandemic, respectively. The small increase in the percentage of the population who support the PCC reveals that just a satisfactory response is not enough to sway voters.
+
+As shown from the graph above, graph (8), it seems that for most people, their political stance has not been severely influenced by the Ontario government’s response. Meaning that only approximately 21% of people changed their stances from supporting or not supporting the PC party due to being negatively or positively affected by the Covid19 pandemic, respectively. The small increase in the percentage of the population who support the PCC reveals that just a satisfactory response is not enough to sway voters.
 
 Overall, it seems that the current Ontario government’s response has been alright and enough to keep their current voters content. However, with 35% of the population reporting a decline in their mental health, it is clear that there are many underlying issues that can and should be further addressed. There is much room for improvement that the PCC should pay attention to if the they aims to capture more votes.
 
@@ -477,6 +500,7 @@ Larmarange, Joseph. Labelled: Manipulating Labelled Data. 2020, larmarange.githu
 
 
 # Appendix
-A screen shot is not avaliable due to survey monkey limitations. 
 Link to survey at:
 https://www.surveymonkey.com/create/preview/?sm=grlkLOM6Xugn6hymzrWHCoMlQNw7TDU4F1YeaxoK76I_3D&tab_clicked=1
+
+Screenshots can be found on the next page or in the Survey folder.
