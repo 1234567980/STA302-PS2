@@ -44,7 +44,7 @@ OntarioCensus <- OntarioCensus %>% mutate(Percent = as.numeric(Age) / total)
 who2018_percentage <- c(0.4063, 0.3369, 0.193, 0.0462, 0.0176)
 
 #TODO: Discuss later? Not sure how to find the appropriate amount of survey takers
-survey_size <- 3850
+survey_size <- 385
 
 set.seed(123)
 
